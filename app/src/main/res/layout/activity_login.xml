@@ -30,16 +30,4 @@
         android:layout_marginTop="50dp"
         android:layout_below="@+id/password1"/>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:id="@+id/image_view"/>
-
-    <Button
-        android:id="@+id/bt_open"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="190dp"
-        android:text="open_camera" />
-
 </RelativeLayout>
