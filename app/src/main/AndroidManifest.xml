@@ -32,7 +32,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.loginsqlite"
+            android:authorities="com.example.loginsqlite.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
