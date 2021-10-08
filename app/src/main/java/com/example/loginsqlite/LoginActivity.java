@@ -3,6 +3,7 @@ package com.example.loginsqlite;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
                     Boolean checkuserpass = DB.checkusernamepassword(user, pass);
                     if(checkuserpass==true){
                         Toast.makeText(LoginActivity.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
+                        Log.d("Check","Cam ein to run home activity!!");
                         Intent intent  = new Intent(getApplicationContext(), HomeActivity.class);
                         startActivity(intent);
                     }else{
