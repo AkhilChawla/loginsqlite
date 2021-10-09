@@ -32,7 +32,16 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
 public class HomeActivity extends AppCompatActivity {
+    String filePath = "Pictures/";
     Button btnTakePic;
     ImageView imageView;
     String pathToFile;
@@ -42,7 +51,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         btnTakePic = findViewById(R.id.btnTakePic);
-        if(Build.VERSION.SDK_INT>=21){
+        if(Build.VERSION.SDK_INT>=23){
             requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE},2);
         }
         btnTakePic.setOnClickListener(new View.OnClickListener() {
@@ -52,8 +61,32 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
         imageView=findViewById(R.id.image);
+        uploadImage();
     }
 
+    private void uploadImage() {
+        File file = new File(filePath);
+
+        Retrofit retrofit = NetworkClient.getRetrofit();
+
+        RequestBody requestBody = RequestBody.create(MediaType.parse("image/*"), file);
+        MultipartBody.Part parts = MultipartBody.Part.createFormData("newimage", file.getName(), requestBody);
+
+        RequestBody someData = RequestBody.create(MediaType.parse("text/plain"), "This is a new Image");
+
+        UploadApis uploadApis = retrofit.create(UploadApis.class);
+        Call call = uploadApis.uploadImage(parts, someData);
+        call.enqueue(new Callback() {
+            @Override
+            public void onResponse(Call call, Response response) {
+
+            }
+            @Override
+            public void onFailure(Call call, Throwable t) {
+
+            }
+        });
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
