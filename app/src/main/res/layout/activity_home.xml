@@ -4,22 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    android:background="@drawable/blockchain"
+    tools:context=".Activity.CreateAccountActivity">
 
     <ImageView
-        android:layout_margin="10dp"
-        android:id="@+id/image"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"/>
-    <!--        app:srcCompat="@drawable/ic_launcher_background" />
-            -->
+        android:id="@+id/img_clicked"
+        android:layout_width="311dp"
+        android:layout_height="210dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginRight="66dp"
+        android:src="@drawable/avatar" />
 
     <Button
         android:id="@+id/btnTakePic"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="275dp"
-        android:onClick="getImage"
-        android:text="open_camera" />
+
+        android:layout_alignTop="@+id/btn_upload"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="83dp"
+        android:layout_marginRight="58dp"
+        android:background="@drawable/btnsignin_gradient"
+        android:text="TAKE SELFIE"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btn_upload"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/img_clicked"
+        android:layout_alignBaseline="@id/img_clicked"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="54dp"
+        android:background="@drawable/btnsignin_gradient"
+        android:text="Upload"
+        android:textColor="#FFFFFF" />
+
 
 </RelativeLayout>
+
+
+

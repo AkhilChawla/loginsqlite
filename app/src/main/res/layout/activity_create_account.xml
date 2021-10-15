@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   android:background="@drawable/blockchain"
-    tools:context=".Activity.MainActivity">
+    android:background="@drawable/blockchain"
+    tools:context=".Activity.CreateAccountActivity">
 
 
 
@@ -63,35 +63,17 @@
             android:textSize="15sp" />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
-            android:text="@string/forgot_password"
-            android:textColor="@color/white" />
+
 
 
         <Button
-            android:id="@+id/btnSignIn"
+            android:id="@+id/btnCreateAcc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
             android:background="@drawable/btnsignin_gradient"
-            android:text="@string/sign_inLog"
+            android:text="Register"
             android:textColor="#FFFFFF" />
-
-        <TextView
-            android:id="@+id/tv_createAcc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="Dont Have An Account? Create Here."
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
 
 
 
