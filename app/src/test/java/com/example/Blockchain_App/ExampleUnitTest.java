@@ -1,4 +1,4 @@
-package com.example.loginsqlite;
+package com.example.Blockchain_App;
 
 import org.junit.Test;
 
