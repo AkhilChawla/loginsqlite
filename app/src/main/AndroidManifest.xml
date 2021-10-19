@@ -4,19 +4,27 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
 
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
 
     <application
+        android:networkSecurityConfig="@xml/networksecurityconfig"
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Blockchain App"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".Activity.CreateAccountActivity"></activity>
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/networksecurityconfig" />
+
+        <activity android:name=".Activity.CreateAccountActivity" />
         <activity android:name=".Activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.HOME" />
