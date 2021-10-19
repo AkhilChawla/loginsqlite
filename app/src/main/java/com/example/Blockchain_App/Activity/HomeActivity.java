@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -92,12 +93,13 @@ public class HomeActivity extends AppCompatActivity
         call.enqueue(new Callback() {
             @Override
             public void onResponse(Call call, Response response) {
+                Toast.makeText(HomeActivity.this,""+response.message(),Toast.LENGTH_LONG).show();
 
             }
 
             @Override
             public void onFailure(Call call, Throwable t) {
-
+                Toast.makeText(HomeActivity.this,""+ t.getMessage(),Toast.LENGTH_LONG).show();
             }
         });
     }
