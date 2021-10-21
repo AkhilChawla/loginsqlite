@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NetworkClient {
     private static Retrofit retrofit;
-    private static String BASE_URL = "http://192.168.29.35:3000/receive/";   ///192.168.29.35
+    private static String BASE_URL = "http://192.168.29.35:3000";   ///192.168.29.35
 
     public static Retrofit getRetrofit() {
         OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
