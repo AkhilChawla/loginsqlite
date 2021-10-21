@@ -41,10 +41,9 @@ import static android.os.Environment.getExternalStoragePublicDirectory;
 public class HomeActivity extends AppCompatActivity
 {
     String pathToFile;
-    final String filePath = "Pictures/";
+    String filePath = "Pictures/";
     private Button btnTakePic, btn_upload;
     private ImageView imageView;
-
     @RequiresApi(api = Build.VERSION_CODES.M)
 
 
@@ -122,9 +121,9 @@ public class HomeActivity extends AppCompatActivity
         if (takePic.resolveActivity(getPackageManager()) != null) {
             File photoFile = null;
             photoFile = createPhotoFile();
-
             if (photoFile != null) {
                 pathToFile = photoFile.getAbsolutePath();
+                filePath=pathToFile;
                 Uri photoURI = FileProvider.getUriForFile(
                         HomeActivity.this, "com.example.Blockchain_App.fileprovider", photoFile
                 );
